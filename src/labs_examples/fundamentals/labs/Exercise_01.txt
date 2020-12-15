@@ -2,21 +2,115 @@ Fundamentals Exercise 1: CLI
      Perform the following tasks using the CLI and copy and paste the commands and results below
 
      1. Navigate to CodingNomads folder (or the space you have create for this project)
+
+     C:\Users\torin
+     λ cd CN
+     C:\Users\torin\CN
+
      2. Create new folder Terminal_testing
+
+     C:\Users\torin\CN
+     λ mkdir Terminal_testing
+
+     C:\Users\torin\CN
+     λ ls -al
+     total 25
+     drwxr-xr-x 1 torin 197609   0 Dec 14 18:57 ./
+     drwxr-xr-x 1 torin 197609   0 Dec 14 09:51 ../
+     drwxr-xr-x 1 torin 197609   0 Nov 30 19:06 com/
+     -rw-r--r-- 1 torin 197609   0 Dec  1 15:32 file.text
+     -rw-r--r-- 1 torin 197609   0 Dec  1 15:33 file2.text
+     -rw-r--r-- 1 torin 197609 565 Nov 30 18:59 HelloWorld.class
+     drwxr-xr-x 1 torin 197609   0 Dec  1 15:37 labs/
+     drwxr-xr-x 1 torin 197609   0 Dec  1 15:30 notes/
+     drwxr-xr-x 1 torin 197609   0 Dec  1 15:25 projects/
+     drwxr-xr-x 1 torin 197609   0 Dec  1 15:25 resources/
+     drwxr-xr-x 1 torin 197609   0 Dec 14 18:57 Terminal_testing/
+
      3. Inside of folder Terminal_testing,
          a. create 3 new .txt files all with different names
          b. print the directory path
          c. list the contents of the folder
+
+         C:\Users\torin\CN
+         λ cd Terminal_testing\
+
+         C:\Users\torin\CN\Terminal_testing
+         λ touch text1.text text2.txt text3.txt
+
+         C:\Users\torin\CN\Terminal_testing
+         λ ls -al
+         total 4
+         drwxr-xr-x 1 torin 197609 0 Dec 14 18:58 ./
+         drwxr-xr-x 1 torin 197609 0 Dec 14 18:57 ../
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text1.text
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text2.txt
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text3.txt
+
      5. Inside of folder Terminal_testing, create a new folder
+
+     C:\Users\torin\CN\Terminal_testing
+     λ mkdir newfolder
+
      6. Copy a file from Terminal_testing to the new folder
+
+       C:\Users\torin\CN\Terminal_testing
+       λ cp text1.text newfolder\
+
      7. Move a different file from Terminal_testing to the new folder
+
+     C:\Users\torin\CN\Terminal_testing
+     λ mv text2.txt newfolder
+
      8. Demonstrate removing:
          a. A file
+
+         C:\Users\torin\CN\Terminal_testing\newfolder
+         λ ls -al
+         total 4
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:10 ./
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:10 ../
+         -rw-r--r-- 1 torin 197609 0 Dec 14 19:09 text1.text
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text2.txt
+
+         C:\Users\torin\CN\Terminal_testing\newfolder
+         λ rm text1.text
+
+         C:\Users\torin\CN\Terminal_testing\newfolder
+         λ ls -al
+         total 4
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:11 ./
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:10 ../
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text2.txt
+
          b. A folder
+
+         C:\Users\torin\CN\Terminal_testing
+         λ rm -r newfolder\
+
+
+         C:\Users\torin\CN\Terminal_testing
+         λ ls -al
+         total 8
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:10 ./
+         drwxr-xr-x 1 torin 197609 0 Dec 14 18:57 ../
+         drwxr-xr-x 1 torin 197609 0 Dec 14 19:11 newfolder/
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text1.text
+         -rw-r--r-- 1 torin 197609 0 Dec 14 18:58 text3.txt
+
+
      9. CHALLENGE:
          a. Use $ vim to write some text inside a file
          b. Use $ cat print contents of file
          c. Use $ grep to search for a word inside file
+
+C:\Users\torin\CN\Terminal_testing
+λ cat text3.txt
+This is some text in this text file.
+
+C:\Users\torin\CN\Terminal_testing
+λ grep some
+
 
 Example Output (pwd):
     1. Cadens-MacBook-Pro:CodingNomads cadenmackenzie$ pwd

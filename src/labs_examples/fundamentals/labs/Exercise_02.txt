@@ -7,13 +7,54 @@ Initializing git folder
     2. Inside git_practice:
         a. Initialize folder as a git folder (make sure you are in the correct folder when initializing) by running
             the "git init" command within the git_practice folder.
+
+            C:\Users\torin\CN
+            λ mkdir git_practice
+            C:\Users\torin\CN\git_practice
+            λ git init
+            Initialized empty Git repository in C:/Users/torin/CN/git_practice/.git/
         b. Make new file
+
+        C:\Users\torin\CN\git_practice (master)
+        λ touch ex2file.txt
+
         c. Add file
+
+        C:\Users\torin\CN\git_practice (master)
+        λ git add ex2file.txt
+
         d. Commit file
+
+        [master (root-commit) 9525f9f] commiting file for ex2
+         1 file changed, 0 insertions(+), 0 deletions(-)
+         create mode 100644 ex2file.txt
+
         c. On Github, create new git_practice repository
+
+
         d. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
             git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>
+
+            C:\Users\torin\CN\git_practice (master)
+            λ   git remote add practice https://github.com/torinstuartbrown/git_practice
+
         d. Push commit file to Github
+
+        C:\Users\torin\CN\git_practice (master)
+        λ git push --set-upstream practice master
+        Enumerating objects: 3, done.
+        Counting objects: 100% (3/3), done.
+        Writing objects: 100% (3/3), 224 bytes | 224.00 KiB/s, done.
+        Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+        To https://github.com/torinstuartbrown/git_practice
+         * [new branch]      master -> master
+        Branch 'master' set up to track remote branch 'master' from 'practice'.
+
+        C:\Users\torin\CN\git_practice (master -> practice)
+        λ git push -u practice
+        Everything up-to-date
+        Branch 'master' set up to track remote branch 'master' from 'practice'.
+
         e. Practice the following git flow until you feel comfortable:
             i.   Create or modify file
             ii.  Add file(s)
