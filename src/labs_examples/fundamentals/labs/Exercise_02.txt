@@ -61,6 +61,21 @@ Initializing git folder
             iii. Commit file(s)
             iv.  Push file(s) to Github repository
 
+            Doing this ad end of night push:
+
+            C:\Users\torin\CN\labs\online-java-fundamentals (master -> torinstuartbrown)
+            λ git push
+            Enumerating objects: 28, done.
+            Counting objects: 100% (28/28), done.
+            Delta compression using up to 12 threads
+            Compressing objects: 100% (13/13), done.
+            Writing objects: 100% (15/15), 3.08 KiB | 3.08 MiB/s, done.
+            Total 15 (delta 4), reused 0 (delta 0), pack-reused 0
+            remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+            To https://github.com/torinstuartbrown/java_fundamentals.git
+               0b831f1..b9fb336  master -> master
+
+
 Adding a remote
     1. Create new personal repository on Github named "git_practice_2".
     2. On local machine, add the new remote address to the same git repo you were working with in the previous section above

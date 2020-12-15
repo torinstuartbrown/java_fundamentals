@@ -17,6 +17,23 @@ public class Exercise_04 {
 
         // write your code below
 
+        boolean  T = true;
+        System.out.println(T);
+
+        char number ='6';
+        System.out.println(number);
+
+        byte byte1 = -100;
+        System.out.println(byte1);
+
+        short short1 = -12312;
+        System.out.println(short1);
+
+        float float1 = 450*450;
+        System.out.println(float1);
+
+        double double1 = 888888888;
+        System.out.println(double1);
     }
 
 }
