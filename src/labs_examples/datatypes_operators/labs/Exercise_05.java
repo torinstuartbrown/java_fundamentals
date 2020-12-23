@@ -34,6 +34,13 @@ class LogicalOperators {
             System.out.println("a and b is true");}
         else{System.out.println("a and b is false");
         }
+        // 0001 0100
+        // 0101 1011
+        // 0001 0000 and
+        // 0101 1111 or
+        // 0100 1111 xor
+        // 64712
+        //
     }
 
 }

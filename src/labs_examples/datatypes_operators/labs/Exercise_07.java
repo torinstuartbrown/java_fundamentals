@@ -25,5 +25,7 @@ public class Exercise_07 {
 
         // write completed code here
 
+        long secounds = days * 24 * 60 * 60;
+        System.out.println("There are " + secounds + " seconds in " + days + " days.");
     }
 }

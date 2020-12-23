@@ -1,5 +1,7 @@
 package labs_examples.conditions_loops.labs;
 
+import java.util.Scanner;
+
 /**
  * Conditions and Loops Exercise 5: Calculator
  *
@@ -16,4 +18,23 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_05 {
+
+    public static void main(String[] args) {
+
+        // create scanner
+        Scanner scanner = new Scanner(System.in);
+        // prompt user
+        System.out.print("Enter a upper and lower ");
+        // assign input to variable as int
+        int upper = scanner.nextInt();
+        int lower = scanner.nextInt();
+        int sum = upper + lower ;
+        int prod = upper * lower ;
+
+        System.out.println("The sum of " + upper + " and " + lower + " is eqaul to " + sum);
+        System.out.println("The product of " + upper + " and " + lower + " is eqaul to " + prod);
+
+
+
+    }
 }
