@@ -30,8 +30,7 @@ public class Exercise_02 {
         int number = scanner.nextInt();
 
         // write completed code here
-        if
-        (number == 1) {
+        if (number == 1) {
             System.out.println("Monday");
         }
         else if(number == 2) {

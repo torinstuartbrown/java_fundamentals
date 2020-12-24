@@ -26,14 +26,26 @@ public class Exercise_05 {
         // prompt user
         System.out.print("Enter a upper and lower ");
         // assign input to variable as int
-        int upper = scanner.nextInt();
         int lower = scanner.nextInt();
+        int upper = scanner.nextInt();
+
         int sum = upper + lower ;
         int prod = upper * lower ;
 
         System.out.println("The sum of " + upper + " and " + lower + " is eqaul to " + sum);
         System.out.println("The product of " + upper + " and " + lower + " is eqaul to " + prod);
 
+        int s = 0;
+        int count = 0;
+
+
+        for(int i = lower; i <= upper; i++){
+            s += i;
+            count++;
+        }
+        double a = (double)s / count;
+        System.out.println(s);
+        System.out.println(a);
 
 
     }

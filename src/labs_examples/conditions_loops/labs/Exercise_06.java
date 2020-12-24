@@ -10,13 +10,14 @@ package labs_examples.conditions_loops.labs;
 public class Exercise_06 {
     public static void main(String[] args) {
 
-    int i = 0;
+        int i = 1;
+        int s = 0;
+        while (i < 101) {
+            s += i;
+            i++;
 
-        while(i<101){
-            int j = i + i++;
-            System.out.println(j);
         }
-
+        System.out.println(s);
 
     }
 }

@@ -22,5 +22,15 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_11 {
+    public static void main(String[] args) {
 
+        for (int r = 1; r<=10; r++){
+            for (int i = 1; i<=10; i++){
+                System.out.print(r*i + " |");
+            }
+            System.out.println();
+        }
+
+
+    }
 }
