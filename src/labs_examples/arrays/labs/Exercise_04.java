@@ -19,7 +19,7 @@ public class Exercise_04 {
             for(int j=0; j<irregArray[i].length; j++){
                 System.out.print(irregArray[i][j]+ " ");
             }
-        System.out.println();
+            System.out.println();
         }
     }
 

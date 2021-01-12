@@ -16,6 +16,7 @@ public class Exercise_07 {
     public static void main(String[] args) {
 
         ArrayList<String> list = new ArrayList();
+        ArrayList<ArrayList<String>> listOfLists = new ArrayList<>();
 
         list.add("Element One");
         list.add("Element Two");

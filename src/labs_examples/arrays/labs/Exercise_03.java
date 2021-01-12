@@ -19,12 +19,13 @@ public class Exercise_03 {
 
     public static void main(String[] args) {
         int[][] arrayTwo = new int[5][5];
-        int count = 1;
+        int count = 3;
 
         for (int i = 0; i < arrayTwo.length; i++){
             for (int j = 0; j < arrayTwo[i].length; j++){
 
-                arrayTwo[i][j] = count++ * 3;
+                arrayTwo[i][j] = count;
+                count += 3;
                 System.out.print(arrayTwo[i][j] + " ");
             }
             System.out.println();

@@ -19,35 +19,33 @@ public class Exercise_01 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Provide 10 Numbers: ");
-        int one = scanner.nextInt();
-        int two = scanner.nextInt();
-        int three = scanner.nextInt();
-        int four = scanner.nextInt();
-        int five = scanner.nextInt();
-        int six = scanner.nextInt();
-        int seven = scanner.nextInt();
-        int eight = scanner.nextInt();
-        int nine = scanner.nextInt();
-        int ten = scanner.nextInt();
-        int[] arrayOne = {one, two, three, four, five, six, seven, eight, nine, ten};
-        for (int i = 0; i <arrayOne.length; i++){
+//        System.out.print("Provide 10 Numbers: ");
+//        int[] nums = new int[10];
+//        int sum = 0;
+//        for (int i = 1; i <= 10; i++) {
+//            System.out.println("Provide Number " + i);
+//            nums[i - 1] = scanner.nextInt();
+//            sum += nums[i-1];
+//
+//        }
 
-            System.out.println(arrayOne[i]);
-
-
-
-            }
-        int sum =0;
-        for (int value : arrayOne) {
-            sum += value;
+        System.out.println("Please enter ten numbers seperated by commas: ");
+        String input = scanner.next();
+        String[] strNums = input.split(",");
+        int sum = 0;
+        for(String s : strNums){
+            sum += Integer.parseInt(s);
         }
-        System.out.println(sum);
-        System.out.println(arrayOne.length);
-        double avg = sum / arrayOne.length;
 
-        System.out.println(avg);
-        }
+        double avg = (double)sum / strNums.length;
+
+
+
+
+        System.out.println("The sum is " + sum);
+        System.out.println("The Average is " + avg);
+
 
     }
+}
 
