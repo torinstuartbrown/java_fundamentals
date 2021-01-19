@@ -6,12 +6,18 @@ public class Roadbike {
     private int size;
     private boolean tubeless;
 
+    //default
     public Roadbike(){}
 
+//    fully qualified
     public Roadbike(String brand, int size, boolean tubeless) {
         this.brand = brand;
         this.size = size;
         this.tubeless = tubeless;
+    }
+//
+    public Roadbike(String brand){
+        this.brand = brand;
     }
 
     @Override

@@ -1,9 +1,9 @@
 package labs_examples.objects_classes_methods.labs.objects.demo;
 
 public class Guitar {
-    private String brand;
-    private int numStrings;
-    private boolean electric;
+    public String brand;
+    public int numStrings;
+    public boolean electric;
 
     //my.guitar
     public Guitar(){}
