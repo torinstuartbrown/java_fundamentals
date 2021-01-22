@@ -25,6 +25,7 @@ class Manufacturer {
         this.brand = brand;
     }
 
+
     public String getBrand() {
         return brand;
     }

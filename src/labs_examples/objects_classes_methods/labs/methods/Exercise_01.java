@@ -10,12 +10,16 @@ public class Exercise_01 {
         int count1 = countArgs("1", "2", "3");
         int count2 = countArgs("hi");
 
+
         // please create the methods as instructed below then
         // call each of those methods from here, within the main()
-        System.out.println(multiply(5, 6));
-        System.out.println(divide(50, 5));
+        int product = multiply(2, 5);
+        System.out.println(product);
+        int quotent = divide(50 , 5);
+        System.out.println(quotent);
         joke("tell me a joke");
-        System.out.println(yearsToSeconds(9));
+        double secondsinayear = yearsToSeconds(9);
+        System.out.println(secondsinayear);
         int secs = yearsToSeconds(7);
         System.out.println(secs);
         System.out.println(count1);
@@ -30,6 +34,7 @@ public class Exercise_01 {
         return product;
 
     }
+
 
 
     // 2) Create a static divide() method below that takes two int arguments (int a, int b) and

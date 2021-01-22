@@ -3,6 +3,7 @@ package labs_examples.objects_classes_methods.labs.methods;
 
 import labs_examples.objects_classes_methods.labs.objects.demo.Guitar;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,21 +14,47 @@ public class MethodTraining {
         double a = 5;
         double b = 50;
 
+
+        // 2
+        System.out.println("Demonstrate the difference between pass by value and pass by reference");
         passByValue(a, b);
         System.out.println();
-
-        System.out.println(largestNum(4, 6, 29, 0));
-        System.out.println();
-        System.out.println(isPrime(7));
+        System.out.println("3) Create a method that will return the largest of 4 numbers (all of which are passed in as " +
+                "arguments)");
+        int largestNumber = largestNum(4, 93, 29, 0);
+        System.out.println(largestNumber);
         System.out.println();
         countConsonants("");
         System.out.println();
+        System.out.println( "5) Write a method that will print some kind of ascii art to the console Google ascii art if " +
+                "needed)");
+        art("print");
+        System.out.println();
+        System.out.println("6) Write a method that will determine whether or not a number is prime");
+        boolean isNumberPrime = isPrime(7);
+        System.out.println("If the number entered was prime print true, if not print false:");
+        System.out.println(isNumberPrime);
 
+        System.out.println("  7) Write a method that will return a small array containing the highest and lowest numbers " +
+                "in a given numeric array, which is passed in as an argument");
+
+
+
+        minMax(new int[]{23, 4, 9, 999});
+        System.out.println();
+
+        System.out.println(" 8) Write a method that takes 3 arguments (int maxNum, int divisor1, int divisor2) and returns an Integer Arraylist.\n" +
+                "//            In this method create an Integer ArrayList and populate it with each number between zero and maxNum that is\n" +
+                "//            divisible by both divisor1 and divisor2. Then return this ArrayList. After calling this method, print out the\n" +
+                "//            length of the returned list");
         arrayList1(50, 2, 10);
         System.out.println();
+        System.out.println("    //            9) Write a method that will reverse an array in place use only one extra temp variable. For this exercise you cannot\n" +
+                "//            instantiate a second array. You must reverse the array in place using only one extra temp variable. Hint: this\n" +
+                "//            variable is used to temporarily store individual values in the array");
         arrayReverser(new int[]{1, 2, 3, 4});
         System.out.println();
-        minMax(new int[]{5, 8, 1, 10, 3});
+
     }
 
     //    1) Demonstrate method overloading in this class
@@ -79,6 +106,7 @@ public class MethodTraining {
         }
         return l;
 
+
     }
 
     //            4) Write a method to count all consonants (the opposite of vowels) in a String
@@ -102,16 +130,18 @@ public class MethodTraining {
 
 
     //            5) Write a method that will print some kind of ascii art to the console (Google "ascii art" if needed)
-    // come back to this
-//    public static void art(String s) {
-//        if (s == "print") {
-//            for (int i = 1; i > 0; i++) {
-//                System.out.println();
-//            }
-//
-//        }
 
-//    }
+    public static void art(String s) {
+        if (s == "print") {
+            System.out.println(" . *  /\\ .   *    .   ");
+            System.out.println("    ./ `\\ . *   .   * ");
+            System.out.println("  * /````\\       .    ");
+            System.out.println("   /``````\\\\>-|o     ");
+            System.out.println(". /```.````\\   .      ");
+            System.out.println(" /``````````\\    .  . ");
+        }
+
+    }
 //            6) Write a method that will determine whether or not a number is prime
     public static boolean isPrime(int a){
         boolean prime = true;
@@ -124,16 +154,25 @@ public class MethodTraining {
     }
 //            7) Write a method that will return a small array containing the highest and lowest numbers in a given numeric array,
 //            which is passed in as an argument
-    public static void minMax(int[] nums){
-        int min;
-        int max = 0;
-        for(int i = 0; i > 0; i++){
-            if(nums[i] > nums[i+1+i])
-                max = nums[i];
+    public static void minMax(int[] nums) {
 
+        int min = 0;
+        int max = 0;
+
+        for(int i=0; i < nums.length-1; i++) {
+            if(nums[i] < min)
+                min = nums[i];
+            if(nums[i] > max)
+                max = nums[i];
         }
-        System.out.println(max);
+        int minMaxArray[] = new int[2];
+        minMaxArray[0] = min;
+        minMaxArray[1] = max;
+
+        for(int i=0; i < minMaxArray.length; i++)
+            System.out.print(" " + minMaxArray[i]);
     }
+
 
     //            8) Write a method that takes 3 arguments (int maxNum, int divisor1, int divisor2) and returns an Integer Arraylist.
 //            In this method create an Integer ArrayList and populate it with each number between zero and maxNum that is
@@ -142,7 +181,7 @@ public class MethodTraining {
 
     public static void arrayList1(int max, int div1, int div2){
         ArrayList<Integer> list = new ArrayList();
-        for(int i = 0; i <= max ; i++){
+        for(int i = 0; i <= max; i++){
             if(i % div1 == 0 && i % div2 == 0){
                 list.add(i);
             }
