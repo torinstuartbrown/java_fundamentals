@@ -12,6 +12,7 @@ class Exone {
 
         System.out.println(planePlane.toString());
 
+        Airplane a1 = new Airplane();
     }
 }
 
@@ -85,6 +86,8 @@ class Airplane {
 
         this.currentFuelLevel = currentFuelLevel;
     }
+
+    public Airplane(){}
 
     public Manufacturer getManufacturer() {
         return manufacturer;

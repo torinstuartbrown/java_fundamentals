@@ -11,20 +11,23 @@ public class MethodTraining {
 
 
     public static void main(String[] args) {
+
+        passByReference();
         double a = 5;
         double b = 50;
 
 
         // 2
         System.out.println("Demonstrate the difference between pass by value and pass by reference");
-        passByValue(a, b);
+        passByValue(a);
+        System.out.println(a);
         System.out.println();
         System.out.println("3) Create a method that will return the largest of 4 numbers (all of which are passed in as " +
                 "arguments)");
-        int largestNumber = largestNum(4, 93, 29, 0);
+        int largestNumber = largestNum(-4, -93, -29, -7);
         System.out.println(largestNumber);
         System.out.println();
-        countConsonants("");
+        countConsonants("It is snowing outside");
         System.out.println();
         System.out.println( "5) Write a method that will print some kind of ascii art to the console Google ascii art if " +
                 "needed)");
@@ -40,7 +43,7 @@ public class MethodTraining {
 
 
 
-        minMax(new int[]{23, 4, 9, 999});
+        minMax(new int[]{-23, -4, -9, -999});
         System.out.println();
 
         System.out.println(" 8) Write a method that takes 3 arguments (int maxNum, int divisor1, int divisor2) and returns an Integer Arraylist.\n" +
@@ -69,14 +72,13 @@ public class MethodTraining {
 //    2) Demonstrate the difference between "pass by value" and "pass by reference"
 
     // pass by value
-    public static void passByValue(double a, double b) {
+    public static void passByValue(double a) {
         a = a * 2;
-        System.out.println(a);
-        b = b * 10;
-        System.out.println(b);
+
+
     }
 
-    public static void passByReference(String[] args) {
+    public static void passByReference() {
         Guitar methodGuitar = new Guitar("Fender", 12, false);
         System.out.println(methodGuitar.toString());
         makeGuitarElectric(methodGuitar);
@@ -91,36 +93,44 @@ public class MethodTraining {
 //            3) Create a method that will return the largest of 4 numbers (all of which are passed in as arguments)
 
     public static int largestNum(int x, int y, int z, int i) {
-        int l = 0;
-        if (x > y && x > y && x > i) {
-            l = x;
+//        int l = 0;
+//        if (x > y && x > y && x > i) {
+//            l = x;
+//        }
+//        if (y > x && y > z && y > i) {
+//            l = y;
+//        }
+//        if (z > x && z > y && z > i) {
+//            l = z;
+//        }
+//        if (i > x && i > z && i > y) {
+//            l = i;
+//        }
+//        return l;
+
+        int largest = x;
+        if(y > largest){
+            largest = y;
         }
-        if (y > x && y > z && y > i) {
-            l = y;
+        if(z > largest){
+            largest = z;
         }
-        if (z > x && z > y && z > i) {
-            l = z;
+        if(i > largest){
+            largest = y;
         }
-        if (i > x && i > z && i > y) {
-            l = i;
-        }
-        return l;
+        return largest;
 
 
     }
 
     //            4) Write a method to count all consonants (the opposite of vowels) in a String
-    public static void countConsonants(String args){
+    public static void countConsonants(String sentence){
         int count = 0;
-        System.out.println("Enter a sentence :");
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-
-        for (int i=0 ; i<s.length(); i++){
-            char ch = s.charAt(i);
-            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ){
-                System.out.print("");
-            }else if(ch != ' '){
+        //Vowels includes space
+        String vowels  = "aieou ";
+        for(int i = 0; i < sentence.length(); i++){
+            char ch = sentence.charAt(i);
+            if(vowels.indexOf(ch) == -1){
                 count++;
             }
         }
@@ -144,22 +154,21 @@ public class MethodTraining {
     }
 //            6) Write a method that will determine whether or not a number is prime
     public static boolean isPrime(int a){
-        boolean prime = true;
         for(int i = 2; i <= a /2; i++){
             if (a % i == 0){
-                prime = false;
+                return false;
             }
         }
-        return prime;
+        return true;
     }
 //            7) Write a method that will return a small array containing the highest and lowest numbers in a given numeric array,
 //            which is passed in as an argument
     public static void minMax(int[] nums) {
 
-        int min = 0;
-        int max = 0;
+        int min = nums[0];
+        int max = nums[0];
 
-        for(int i=0; i < nums.length-1; i++) {
+        for(int i=0; i < nums.length; i++) {
             if(nums[i] < min)
                 min = nums[i];
             if(nums[i] > max)
@@ -179,7 +188,7 @@ public class MethodTraining {
 //            divisible by both divisor1 and divisor2. Then return this ArrayList. After calling this method, print out the
 //            length of the returned list
 
-    public static void arrayList1(int max, int div1, int div2){
+    public static ArrayList<Integer> arrayList1(int max, int div1, int div2){
         ArrayList<Integer> list = new ArrayList();
         for(int i = 0; i <= max; i++){
             if(i % div1 == 0 && i % div2 == 0){
@@ -187,7 +196,7 @@ public class MethodTraining {
             }
 
         }
-        System.out.println(list);
+        return list;
     }
 
 
@@ -201,13 +210,9 @@ public class MethodTraining {
 
         // Question: in the for loop below, why do we divide "nums.length" by 2?
         for(int i = 0; i < nums.length / 2; i++){
-            // swap elements at indexes in array
-            // you have two indices readily available for you to use "i" (which increments) and "nums.length"
-            // you've also got this "temp" variable you can use to hold a value temporarily
             temp = nums[i];
-            nums[i] = nums[nums.length -1 - i];
-            nums[nums.length - 1 - i] = temp;
-
+            nums[i] = nums[nums.length - 1 - i];
+            nums[nums.length - 1 -i] = temp;
         }
         System.out.print("Contents of array after for loop - ");
         // print each element of the array to verify reverse order
