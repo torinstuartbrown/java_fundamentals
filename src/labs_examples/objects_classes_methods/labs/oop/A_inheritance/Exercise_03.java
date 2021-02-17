@@ -5,7 +5,8 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
  * Class A Constructor
  * Class B Constructor
  * Class C Constructor
- * You answer: Since C inherts B which inherts A and each contain a method that prints "Class # Constructor" when Ex_03 runs C_1 all of the above print lines have been inherted into the method?
+ * You answer: Since C inherts B which inherts A and each contain a method that prints "Class # Constructor" when Ex_03
+ * runs C_1 all of the above print lines have been inherted into the method?
  */
 
 class A_1 {

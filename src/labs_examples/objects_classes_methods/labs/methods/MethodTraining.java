@@ -16,6 +16,9 @@ public class MethodTraining {
         double a = 5;
         double b = 50;
 
+        System.out.println(7);
+        System.out.println("seven");
+        System.out.println(7.0);
 
         // 2
         System.out.println("Demonstrate the difference between pass by value and pass by reference");

@@ -6,9 +6,6 @@ public class Bakedgood extends Dessert {
 //    String flourType;
     double bakingTemp;
 
-    public void getBakingTime(){
-        System.out.println("Baking time is equal to bakingTemp / 4");
-    }
 
     public Bakedgood(){
         bakingTemp = 0;
