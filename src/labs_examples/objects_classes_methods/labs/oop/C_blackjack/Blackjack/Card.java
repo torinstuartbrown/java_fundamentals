@@ -7,7 +7,6 @@ public class Card {
     private char suit;
     private int cardValue;
 
-
     public Card(int cardValue, char suit) {
         this.suit = suit;
         this.cardValue = cardValue;
@@ -19,24 +18,25 @@ public class Card {
     }
 
     public String getFaceValue() {
-        if (cardValue == 1){
+        if (cardValue == 1) {
             return "A";
-        } else if (cardValue > 1 && cardValue < 11){
+        } else if (cardValue > 1 && cardValue < 11) {
             return String.valueOf(cardValue);
-        } else if (cardValue == 11){
+        } else if (cardValue == 11) {
             return "J";
-        } else if (cardValue == 12){
+        } else if (cardValue == 12) {
             return "Q";
         } else {
             return "K";
         }
     }
 
-
     public int getPointValue() {
-        if (cardValue < 11){
+        if (cardValue == 1) {
+            return 11;
+        } else if (cardValue < 11) {
             return cardValue;
-        } else{
+        } else {
             return 10;
         }
 

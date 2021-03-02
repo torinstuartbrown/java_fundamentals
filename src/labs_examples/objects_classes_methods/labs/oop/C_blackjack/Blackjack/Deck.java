@@ -1,9 +1,6 @@
 package labs_examples.objects_classes_methods.labs.oop.C_blackjack.Blackjack;
 
-import labs_examples.objects_classes_methods.labs.oop.B_polymorphism.*;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
@@ -42,11 +39,7 @@ public class Deck {
 
         return cards[int_random];
     }
-
-
-
 }
-    // etc
 
 
 
