@@ -8,6 +8,9 @@ public class Player {
     private int potValue;
     private boolean declineNextCard;
     private int currentBet;
+    private int gamesPlayed = 0;
+    private int gamesWon = 0;
+    private int gamesLost = 0;
 
     public Player(String name, int potValue) {
         this.name = name;
@@ -38,10 +41,14 @@ public class Player {
                 declineNextCard = true;
                 return false;
             }
-        } else {
+        } else{
             System.out.println("Would you like another card? (Y/N)");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.next();
+            while (!input.equalsIgnoreCase("Y") && (!input.equalsIgnoreCase("N"))) {
+                System.out.println("Invalid repose please enter Y or N.");
+                input = scanner.next();
+            }
             if (input.equalsIgnoreCase("Y")) {
                 return true;
             } else {
@@ -88,8 +95,33 @@ public class Player {
     }
 
 
+
     public int getCurrentBet() {
         return currentBet;
+    }
+
+    public int getGamesPlayed() {
+        return gamesPlayed;
+    }
+
+    public void setGamesPlayed(int gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
+    }
+
+    public int getGamesWon() {
+        return gamesWon;
+    }
+
+    public void setGamesWon(int gamesWon) {
+        this.gamesWon = gamesWon;
+    }
+
+    public int getGamesLost() {
+        return gamesLost;
+    }
+
+    public void setGamesLost(int gamesLost) {
+        this.gamesLost = gamesLost;
     }
 
     public void setDeclineNextCard(boolean declineNextCard) {

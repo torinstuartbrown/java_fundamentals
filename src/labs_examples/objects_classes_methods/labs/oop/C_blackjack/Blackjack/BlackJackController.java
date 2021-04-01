@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class BlackJackController {
 
+
     /**
      * This method creates a new Blackjack game and calls the method that contains the game.
      */
@@ -25,21 +26,30 @@ public class BlackJackController {
 
         Scanner scanner = new Scanner(System.in);
         String playAgain = scanner.next();
-        while (playAgain.equalsIgnoreCase("Y")) {
 
-            dealInitialCards(player, computer, deck);
 
-            dealAdditionalCards(player, computer, deck);
+        while (!playAgain.equalsIgnoreCase("Y") || (!playAgain.equalsIgnoreCase("N"))) {
+            if (playAgain.equalsIgnoreCase("Y")) {
 
-            printGameStatus(player, computer);
+                dealInitialCards(player, computer, deck);
 
-            determineWinner(player, computer);
+                dealAdditionalCards(player, computer, deck);
 
-            playAgain = playAgain(player, computer, deck);
+                printGameStatus(player, computer);
 
+                determineWinner(player, computer);
+
+                playAgain = playAgain(player, computer, deck);
+
+
+            } else if (playAgain.equalsIgnoreCase("N")) {
+                System.out.println("Game ended, have a good day!");
+                break;
+            } else {
+                System.out.println("Invalid repose please enter Y or N.");
+                playAgain = scanner.next();
+            }
         }
-        System.out.println("Game ended, have a good day!");
-
     }
 
     /**
@@ -152,6 +162,8 @@ public class BlackJackController {
         int win = 21;
 
         boolean playerWin = false;
+
+
         if (computer.getHand().getHandValue() == win) {
             System.out.println("Computer scored 21!!!!! \n You Lose!");
         } else if (player.getHand().getHandValue() >= bust) {
@@ -160,12 +172,29 @@ public class BlackJackController {
             System.out.println("Computer busts! \nYou WIN!");
             playerWin = true;
         } else if (player.getHand().getHandValue() < bust && computer.getHand().getHandValue() < player.getHand().getHandValue()) {
-            System.out.println("You WINS!");
+            System.out.println("You WIN!");
             playerWin = true;
         } else if (computer.getHand().getHandValue() < bust && player.getHand().getHandValue() <= computer.getHand().getHandValue()) {
             System.out.println("Computer WINS! \n");
         }
         player.updatePotValue(playerWin);
+
+        player.setGamesPlayed(player.getGamesPlayed() + 1);
+
+        if (playerWin) {
+            player.setGamesWon(player.getGamesWon() + 1);
+        } else {
+            player.setGamesLost(player.getGamesLost() + 1);
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("Score: Total hands: ")
+                .append(player.getGamesPlayed())
+                .append(" Hands Won: ")
+                .append(player.getGamesWon())
+                .append(" Hands Lost: ")
+                .append(player.getGamesLost())
+                .append("\n");
+        System.out.println(sb.toString());
     }
 
     /**
@@ -177,49 +206,29 @@ public class BlackJackController {
      * @return - "Y" if yes. "N" if no.
      */
     public String playAgain(Player player, Player computer, Deck deck) {
-        if (player.getPotValue() == 0) {
-            System.out.println("You are out of chips!");
-            System.out.println("Would you like to play again? (Y/N)");
-            Scanner scanner = new Scanner(System.in);
-            String response = scanner.next();
-            while (!response.equalsIgnoreCase("Y") || (!response.equalsIgnoreCase("N"))) {
-                System.out.println("Invalid repose please enter Y or N.");
-                response = scanner.next();
-                if (response.equalsIgnoreCase("n")) {
-                    return "N";
-                }
-                if (response.equalsIgnoreCase("Y")) {
-                    player.getHand().removeCards();
-                    computer.getHand().removeCards();
-                    player.setDeclineNextCard(false);
-                    computer.setDeclineNextCard(false);
-                    deck = new Deck();
-                    player.setPotValue(100);
-                    computer.setPotValue(100);
-                    return "Y";
-                }
-            }
-            return "N";
-        }
+
         System.out.println("Would you like to play again? (Y/N)");
         Scanner scanner = new Scanner(System.in);
         String response = scanner.next();
-        while (!response.equalsIgnoreCase("Y") || (!response.equalsIgnoreCase("N"))) {
+
+        while (!response.equalsIgnoreCase("Y") && (!response.equalsIgnoreCase("N"))) {
             System.out.println("Invalid repose please enter Y or N.");
             response = scanner.next();
-            if (response.equalsIgnoreCase("n")) {
-                return "N";
-            }
-            if (response.equalsIgnoreCase("Y")) {
-                player.getHand().removeCards();
-                computer.getHand().removeCards();
-                player.setDeclineNextCard(false);
-                computer.setDeclineNextCard(false);
-                deck = new Deck();
-                return "Y";
-            }
         }
-        return "N";
+        if (response.equalsIgnoreCase("Y")) {
+            if (player.getPotValue() <= 0){
+                System.out.println("You ran out of chips, here is 100 more!");
+                player.setPotValue(100);
+            }
+            player.getHand().removeCards();
+            computer.getHand().removeCards();
+            player.setDeclineNextCard(false);
+            computer.setDeclineNextCard(false);
+            deck = new Deck();
+            return "Y";
+        } else {
+            return "N";
+        }
     }
 }
 
