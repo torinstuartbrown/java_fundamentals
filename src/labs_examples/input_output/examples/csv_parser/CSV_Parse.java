@@ -1,6 +1,9 @@
 package labs_examples.input_output.examples.csv_parser;
 
+import com.sun.org.apache.xpath.internal.functions.FuncRound;
+
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -16,8 +19,7 @@ public class CSV_Parse {
 
 
 
-        try (BufferedReader br =
-                     new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
             String line;
 
@@ -36,7 +38,23 @@ public class CSV_Parse {
             System.out.println(student.toString());
         }
 
+        double avg = averageGPA(students);
+        DecimalFormat df = new DecimalFormat("###.##");
+        System.out.println(df.format(avg));
     }
+
+    private static double averageGPA(ArrayList<Student> students) {
+        double avgGpa;
+        double sum = 0;
+
+        for (int i = 0; i < students.size(); i++){
+            sum += students.get(i).getGpa();
+        }
+
+        avgGpa = sum / students.size();
+        return avgGpa;
+    }
+
 
     private static Student mapValuesToStudentObject(String[] values) {
 

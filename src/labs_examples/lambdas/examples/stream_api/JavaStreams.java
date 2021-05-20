@@ -155,5 +155,7 @@ public class JavaStreams {
                 .reduce(0.0, (Double a, Double b) -> a + b);
 
         System.out.println("Total = " + total);
+
+
     }
 }
