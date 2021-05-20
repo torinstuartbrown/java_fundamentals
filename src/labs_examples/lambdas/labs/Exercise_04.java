@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  * 8) Demonstrate how to Stream the stream_text_lab.csv file in this package. Split the lines into String arrays,
  * the print out the sum of all elements at index 2.
  * 9) Demonstrate the anyMatch() function.
- * 10) Demonstrate the allMatch() function.
+ * 10) Demonstrate the allMatch() function.asdfasdfas
  * 11) Demonstrate the collect() terminal operation to store resulting values into a List
  */
 
