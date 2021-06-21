@@ -7,11 +7,17 @@ package labs_examples.objects_classes_methods.labs.methods;
  * it, it should print 120. It should also work for any ther number you pass it.
  *
  */
-public class Exercise_04 {
+public class Exercise_03 {
 
     public static void main(String[] args) {
+<<<<<<< HEAD:src/labs_examples/objects_classes_methods/labs/methods/Exercise_04.java
         int x = factorial(5);
         System.out.println(x);
+=======
+//        int x = factorial(5);
+//        System.out.println(x);
+//        should print 120
+>>>>>>> fec017cf762c928306a10d145e5739a410f073b2:src/labs_examples/objects_classes_methods/labs/methods/Exercise_03.java
     }
 
     static int factorial(int x){
