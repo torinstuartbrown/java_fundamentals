@@ -6,15 +6,15 @@ package mysql.examples;
 public class Course {
     private int id;
     private String name;
-    private int units;
+    private int credits;
 
     public Course() {
     }
 
-    public Course(int id, String name, int units) {
+    public Course(int id, String name, int credits) {
         this.id = id;
         this.name = name;
-        this.units = units;
+        this.credits = credits;
     }
 
     public int getId() {
@@ -33,12 +33,12 @@ public class Course {
         this.name = name;
     }
 
-    public int getUnits() {
-        return units;
+    public int getcredits() {
+        return credits;
     }
 
-    public void setUnits(int units) {
-        this.units = units;
+    public void setcredits(int credits) {
+        this.credits = credits;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class Course {
         return "Course{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", units=" + units +
+                ", credits=" + credits +
                 '}';
     }
 }

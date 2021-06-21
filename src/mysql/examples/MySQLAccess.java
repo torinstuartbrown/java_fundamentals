@@ -25,21 +25,21 @@ public class MySQLAccess {
         }
     }
 
-    public void readDataBase(String course_name, int units)
+    public void readDataBase(String course_name, int credits)
             throws Exception {
         try {
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the DB
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/University?" +
-                    "user=root&password=&useSSL=false");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/college?" +
+                    "user=root&password=Sql@96768&useSSL=false");
 
 
             // Statements allow to issue SQL queries to the database
             statement = connection.createStatement();
 
             // Result set get the result of the SQL query
-            resultSet = statement.executeQuery("select * from University.courses;");
+            resultSet = statement.executeQuery("select * from college.courses;");
 
             //writeResultSet(resultSet);
             ArrayList<Course> course = mapResultSetToObjects(resultSet);
@@ -51,18 +51,18 @@ public class MySQLAccess {
 
             // PreparedStatements can use variables and are more efficient
             preparedStatement = connection
-                    .prepareStatement("insert into  University.courses (name, units) " +
+                    .prepareStatement("insert into  college.courses (name, credits) " +
                             "values (?, ?)");
             // Parameters start with 1
             preparedStatement.setString(1, course_name);
             // preparedStatement.setString(2, credits);
-            preparedStatement.setInt(2, units);
+            preparedStatement.setInt(2, credits);
             //preparedStatement.setString(4, department);
             preparedStatement.executeUpdate();
 
 
             preparedStatement = connection
-                    .prepareStatement("SELECT * from University.courses");
+                    .prepareStatement("SELECT * from college.courses");
             resultSet = preparedStatement.executeQuery();
 
             //writeResultSet(resultSet);
@@ -71,11 +71,11 @@ public class MySQLAccess {
 
             //Remove again the insert comment
             preparedStatement = connection
-                    .prepareStatement("delete from University.courses where name = ? ; ");
+                    .prepareStatement("delete from college.courses where name = ? ; ");
             preparedStatement.setString(1, "JDBC Course 1");
             preparedStatement.executeUpdate();
 
-            resultSet = statement.executeQuery("select * from University.courses");
+            resultSet = statement.executeQuery("select * from college.courses");
 
             writeMetaData(resultSet);
 
@@ -110,7 +110,7 @@ public class MySQLAccess {
             // e.g. resultSet.getSTring(2);
             String course = resultSet.getString("name");
             //String description = resultSet.getString("description");
-            int credits = resultSet.getInt("units");
+            int credits = resultSet.getInt("credits");
             //String department = resultSet.getString("department");
             System.out.println("Course: " + course);
             // System.out.println("Description: " + description);
@@ -131,7 +131,7 @@ public class MySQLAccess {
             Course c = new Course();
             c.setId(resultSet.getInt("id"));
             c.setName(resultSet.getString("name"));
-            c.setUnits(resultSet.getInt("units"));
+            c.setcredits(resultSet.getInt("credits"));
 
             retList.add(c);
         }
