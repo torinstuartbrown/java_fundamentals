@@ -9,11 +9,11 @@ import java.util.List;
  *      Create a class with a generic method that takes in an ArrayList of any Numeric type and returns the sum of all
  *      Numbers in the ArrayList. Demonstrate how to call this method from the main() method.
  */
-<<<<<<< HEAD
+
 public class Exercise_02 {
-    public static <N extends Number> double totalSum (List<N> list){
+    public static <N extends Number> double totalSum(List<N> list) {
         double sum = 0;
-        for(int i = 0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             sum += list.get(i).doubleValue();
         }
         return sum;
@@ -37,10 +37,4 @@ public class Exercise_02 {
         double y = totalSum(d);
         System.out.println(y);
     }
-=======
-import java.util.ArrayList;
-
-class Demo{
->>>>>>> fec017cf762c928306a10d145e5739a410f073b2
-
 }

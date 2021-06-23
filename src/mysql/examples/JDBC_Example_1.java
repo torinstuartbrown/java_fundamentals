@@ -13,18 +13,23 @@ public class JDBC_Example_1 {
 
         try {
             // This will load the MySQL driver, each DB has its own driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            String connectionString = "jdbc:mysql://localhost/college?"
+                    +"user=root&password=Sql@96768&&useSSL=false&allowPublicKeyRetrieval=true";
 
             // Setup the connection with the DB
             connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost/college?"
-                            + "user=ryan&password=CodingNomadsFoEva!&useSSL=false");
+                    .getConnection(connectionString);
+
+
 
             // Statements allow to issue SQL queries to the database
             statement = connection.createStatement();
             // Result set get the result of the SQL query
             resultSet = statement
                     .executeQuery("select * from college.courses");
+
 
             // loop through the result set while there are more records
             while (resultSet.next()) {
@@ -36,7 +41,10 @@ public class JDBC_Example_1 {
 
                 // print out the result
                 System.out.println("Course ID: " + id + " is " + name + " and has " + units + units);
+
             }
+
+
 
         } catch (SQLException exc) {
             System.out.println("Exception occurred");
