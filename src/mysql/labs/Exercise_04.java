@@ -112,9 +112,9 @@ public class Exercise_04 {
         } finally {
             try {
                 // close all JDBC elements
-                statement.close();
-                resultSet.close();
-                connection.close();
+                if (statement != null) statement.close();
+                if (resultSet != null) resultSet.close();
+                if (connection != null) connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

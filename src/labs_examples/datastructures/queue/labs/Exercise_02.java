@@ -8,11 +8,11 @@ package labs_examples.datastructures.queue.labs;
  *
  *      Your custom Queue class must also do the following:
  *
- *      1) throw a custom exception when trying to pop  an element from an empty Queue
+ *      1) throw a custom exception when trying to pop  an element from an empty Queue done
  *      2) resize the Queue (the underlying array) to be twice the size when the Queue is more than 3/4 full
  *      3) resize the Queue (the underlying array) to be half the size when the Queue is more than 1/4 empty
- *      4) contain the methods peekFirst() and peekLast()
- *      5) contain a size() method
- *      6) contain a method to print out the data of all elements in the Queue
+ *      4) contain the methods peekFirst() and peekLast()done
+ *      5) contain a size() method done
+ *      6) contain a method to print out the data of all elements in the Queue done
  *
  */

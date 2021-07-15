@@ -24,7 +24,7 @@
                and f.departure_id = '2';
 
 *       4.) Query the flight information for a specific passenger on a specific flight
-                SELECT f.flight_id, f.duration, f.departure_time, f.arrival_time, a1.city_name as Departure_Cirty, a2.city_name as Arrival_City
+                SELECT f.flight_id, f.duration, f.departure_time, f.arrival_time, a1.city_name as Departure_City, a2.city_name as Arrival_City
                 from passengers p
                 join flights_passangers fp
                 on p.passanger_id = fp.passanger_id

@@ -5,11 +5,15 @@ package labs_examples.datastructures.linkedlist.examples;
  */
 
 public class Node<T> {
+    // a "link" to the "next" Node in the LinkedList
+    public Node<T> next;
+    // a "link" to the "previous" Node in the LinkedList
+    public Node<T> prev;
 
     // a generic variable to hold the data we want to store in the list
-    T data;
-    // a "link" to the "next" Node in the LinkedList
-    Node next;
+    public T data;
+
+
 
     // a simple constructor that takes in data
     public Node(T data) {
@@ -22,5 +26,10 @@ public class Node<T> {
         this.data = data;
         this.next = node;
 
+    }
+
+    public Node(Node<T> prev, T data) {
+        this.prev = prev;
+        this.data = data;
     }
 }

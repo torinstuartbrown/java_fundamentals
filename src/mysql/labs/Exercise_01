@@ -30,9 +30,11 @@
  *      7.) Write queries (and paste them below) for each of the following tasks:
  *          a. select all students
             select * from students;
+
  *          b. select all teacher who teach "Math" (choose a subject you included)
             select * from teachers
             where subject = "Math";
+
  *          c. use a join query to select all students with a certain teacher
             select
             s.first_name as Student_First_Name,

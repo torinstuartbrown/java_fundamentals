@@ -45,6 +45,7 @@ public class JavaQueue {
             System.out.println(s);
         }
 
+
         // clear the Queue
         myQueue.clear();
     }
