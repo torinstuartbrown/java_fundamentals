@@ -7,17 +7,17 @@ package labs_examples.datastructures.hashmap.labs;
  *
  *  Using a HashMap demonstrate the use of the following methods:
  *
- *  put()
- *  get()
- *  putAll()
- *  size()
- *  contains()
- *  keySet()
- *  entrySet()
- *  putIfAbsent()
- *  remove()
- *  replace()
- *  forEach()
- *  clear()
+ *  put() done
+ *  get() done
+ *  putAll() done
+ *  size() done
+ *  contains() done
+ *  keySet() done
+ *  entrySet() done
+ *  putIfAbsent() dont understand
+ *  remove() done
+ *  replace() done
+ *  forEach() done
+ *  clear() done
  *
  */

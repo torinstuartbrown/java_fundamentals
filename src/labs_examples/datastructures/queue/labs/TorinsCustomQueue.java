@@ -4,9 +4,11 @@ import java.util.Arrays;
 
 public class TorinsCustomQueue<T> {
 
-
     int size = 0;
 
+    //not used but think i was supposed to
+    int first = 0;
+    int last = 0;
 
     private static final int DEFAULT_CAPACITY = 10;
     T[] data = (T[]) new Object[DEFAULT_CAPACITY];
@@ -17,24 +19,38 @@ public class TorinsCustomQueue<T> {
 
 
     public void add(T t) {
-        data[size++] = t;
+        data[last++] = t;
+        size++;
         resize();
     }
 
+
+    //reindexing the entire queue during pops cant be the most efficient way
+    //i should be tracking the "Front" so that i can pop only data[front] then
+    //increment "front" but this
     public T pop() throws Exception {
         if (size == 0) {
             throw new Exception("Empty Queue");
         } else {
-            T t = data[0];
-            for (int i = 0; i < size; i++) {
-                data[i] = data[1 + i];
-            }
-            data[size] = null;
+            T t = data[first];
+            data[first]= null;
+            first++;
             size--;
+            if(first > 4) {
+                int itr = first;
+                for (int i = 0; i < data.length; i++) {
+                    if(itr < data.length) {
+                        data[i] = data[itr++];
+                    }
+                }
+                first = 0;
+            }
             resize();
             return t;
-        }
 
+
+
+        }
     }
 
     public void clear() {
@@ -42,6 +58,8 @@ public class TorinsCustomQueue<T> {
             data[i] = null;
             size = 0;
         }
+        first = 0;
+        last = 0;
     }
 
     public void resize() {
@@ -61,21 +79,20 @@ public class TorinsCustomQueue<T> {
     }
 
     public void print() {
-        int count = 1;
 
-        for (int i = 0; i < size(); i++) {
-            System.out.println(data[i]);
-            ;
-            count++;
+        for (int i = first; i < last; i++) {
+            if(data[i] != null){
+                System.out.println(data[i]);
+            }
         }
     }
 
     public T peakFirst() {
-        return data[0];
+        return data[first];
     }
 
     public T peakLast() {
-        return data[size - 1];
+        return data[last - 1];
     }
 
     public int length() {

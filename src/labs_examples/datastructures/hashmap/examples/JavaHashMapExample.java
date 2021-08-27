@@ -36,6 +36,7 @@ public class JavaHashMapExample {
 
         System.out.println(example.toString());
 
+
         // demonstrate iterating through the entries of a HashMap
         Set entries = peopleMap.entrySet();
         Iterator iterator = entries.iterator();

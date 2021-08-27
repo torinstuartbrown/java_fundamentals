@@ -17,7 +17,18 @@ public class CustomBinarySearchTree {
      */
     public static void main(String[] args) {
         // create the
-        CustomBinarySearchTree bst = new CustomBinarySearchTree(3, 7, 1, 5, 2, 4, 6);
+        CustomBinarySearchTree bst = new CustomBinarySearchTree();
+        bst.insert(1);
+        bst.insert(2);
+        bst.insert(3);
+        bst.insert(4);
+        bst.insert(5);
+        bst.insert(6);
+        bst.insert(7);
+        bst.insert(8);
+        bst.insert(9);
+        bst.insert(10);
+
 
         System.out.println("Printing Tree contents recursively - inOrder");
         bst.printInorderRecursive(bst.root);
@@ -518,7 +529,7 @@ public class CustomBinarySearchTree {
     /**
      * A Node of a Binary Tree
      */
-    private class Node {
+    public class Node {
         Node leftChild;
         Node rightChild;
 

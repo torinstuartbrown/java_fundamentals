@@ -17,10 +17,14 @@ public class Ex1 {
         myQueue.remove("One");
         String s = myQueue.element();
         System.out.println("S is " + s);
-        myQueue.size();
+        System.out.println(myQueue.size());
+        myQueue.clear();
+
+
+
         myQueue.offer("Blue");
         myQueue.toArray();
         myQueue.poll();
-        myQueue.clear();
+
     }
 }

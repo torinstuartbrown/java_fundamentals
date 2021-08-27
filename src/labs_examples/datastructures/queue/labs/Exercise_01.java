@@ -1,7 +1,8 @@
 package labs_examples.datastructures.queue.labs;
 
 /**
- *      Demonstrate your mastery of Java's (sun's) built-in Queue class (as seen in the import statement
+ *      Demonstrate your mastery of Java's (sun's) built-in Queue class
+ *      (as seen in the import statement
  *      above) by completing the following:
  *
  *      1) instantiate a new Queue

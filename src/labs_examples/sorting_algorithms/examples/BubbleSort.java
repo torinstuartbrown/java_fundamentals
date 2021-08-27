@@ -1,5 +1,6 @@
 package labs_examples.sorting_algorithms.examples;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
